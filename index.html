@@ -10,8 +10,62 @@
     <title>Home</title>
 </head>
 <body>
-    
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+       <div class="sticky-top" id="side">
+         <P id="quote">"NEW INFORMATION MAKES NEW AND FRESH IDEAS POSSIBLE." <br><i>~Zig Ziglar~</i> </P>
+          <a href="./bookmarks.html" class="btn btn-outline-info" id="bookmark_page_link">Bookmarks <i class="fas fa-bookmark"></i></a>
+         
+       </div>
+      </div>
+      <div class="col-md-7 m-0" id="main">
+        <div class="row" id="inner_nav">
+          <div class="col">
+           <div id="categories">
+             <span id="all_stories">Posts</span>
+             <span id="asks">Asks</span>
+             <span id="job_alerts">Jobs</span>
+           </div>
+          </div>
+          <div class="col">
+           <form class="form-inline">
+             <div class="input-group mb-2 ml-auto">
+               <div class="input-group-prepend">
+                 <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                   Sort
+                 </button>
+                 <div class="dropdown-menu">
+                   <li class="dropdown-item" id="new">Latest</li>
+                   <li class="dropdown-item" id="old">Oldest</li>
+                 </div>
+               </div>
+               <input type="text" class="form-control" placeholder="Search" id="search">
+             </div>
+           </form>
+          </div>
+        </div>
+       
 
+        
+         
+       
+
+       <div>
+         <div class="spinner-border text-secondary" id="spinner"></div>
+         <div id="articles">
+           
+         </div>
+       </div>
+
+      </div>
+    </div> 
+  </div>
+     
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 </html>
