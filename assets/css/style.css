@@ -1,0 +1,60 @@
+#side{
+    background: url(../images/side_image.jpg);
+    background-color: #c93333; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+  
+  #side_at_BM{
+    background: url(../images/alireza-zarafshani-Kn9_CWO8Gx8-unsplash.jpg);
+    background-color: #c93333; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+  
+  #side_at_BM a {
+    text-decoration: none;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    margin: 10px;
+  }
+  
+  #side_at_BM a:hover {
+    font-size: 43px;
+    color: rgb(216, 198, 198);
+  
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #side,#side_at_BM {
+      height: 20vh;
+    }
+    #inner_nav{
+      width: 100%;
+    }
+  }
+  #inner_nav{
+    position: relative;
+    left: 50px;
+    top: 50px;
+    border-bottom: rgb(185, 178, 178) 1px solid;
+    width: 85%;
+  }
+  
+  #categories span{
+    text-decoration: none;
+    color: rgb(22, 22, 22);
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #categories span:hover{
+    font-weight: bold;
+    border-bottom: black solid 3px;
+  
+  }
