@@ -16,3 +16,25 @@ sort_options.forEach(item => {
 
 
 spinner.style.visibility = "hidden";
+// creating div
+const articles_posts = document.createElement('div')
+const articles_asks = document.createElement('div')
+const articles_jobs = document.createElement('div')
+
+async function getStories() {
+
+    let response = await fetch('https://hacker-news.firebaseio.com/v0/showstories.json?print=pretty');
+    let data = await response.json();
+
+    return data
+
+}
+
+async function getAsks() {
+
+    let response = await fetch('https://hacker-news.firebaseio.com/v0/askstories.json?print=prett');
+    let data = await response.json();
+
+    return data
+
+}
