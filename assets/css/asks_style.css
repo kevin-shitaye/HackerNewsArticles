@@ -1,0 +1,21 @@
+#top_panel{
+    background: url(../images/markus-winkler-Ykm8EK0RoJs-unsplash.jpg);
+    background-color: #c93333; /* Used if the image is unavailable */
+    width: 100%;
+    height: 150px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+
+  #top_panel a {
+      text-decoration: none;
+      font-size: 40px;
+      color: rgb(255, 255, 255);
+      margin: 10px;
+  }
+  #top_panel a:hover {
+    font-size: 43px;
+    color: rgb(216, 198, 198);
+
+}
