@@ -19,3 +19,16 @@
     color: rgb(216, 198, 198);
 
 }
+
+h1, h2 {
+    font-weight: 700;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+}
+
+  #container {
+      margin: auto;
+      width: 70%;
+      font-family: "Droid Serif", serif;
+      font-size: 25px;
+  }
