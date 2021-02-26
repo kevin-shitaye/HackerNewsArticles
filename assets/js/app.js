@@ -38,3 +38,21 @@ async function getAsks() {
     return data
 
 }
+
+async function getJobs() {
+
+    let response = await fetch('https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty');
+    let data = await response.json();
+
+    return data
+
+}
+
+async function get_item(id) {
+
+    let response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`);
+    let data = await response.json();
+
+    return data
+
+}
