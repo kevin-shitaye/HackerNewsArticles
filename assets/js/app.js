@@ -56,3 +56,16 @@ async function get_item(id) {
     return data
 
 }
+
+function displayStrories() {
+    spinner.style.visibility = "visible";
+
+        // making this nav active
+        all_stories.classList.add("active")
+        asks.classList.remove("active")
+        job_alert.classList.remove("active")
+
+        // displaying the right div
+        articles_asks.style.display = "none"
+        articles_jobs.style.display = "none"
+        articles_posts.style.display = "block"
