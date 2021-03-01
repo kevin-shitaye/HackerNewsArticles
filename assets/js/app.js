@@ -116,3 +116,29 @@ function displayStrories() {
                                  bookmark_btn.style.color = "purple"
                              }
                          }
+
+
+
+                         // appending event lisner to the bookmark
+                        
+                        bookmark_btn.addEventListener("click", ()=>{
+                            if (!(bookmark_btn.style.color == "purple")) {
+                                bookmark_btn.style.color = "purple"
+                                addToBookMark(data.id)
+                            } else {
+                                bookmark_btn.style.color = "gray"
+                                removeFromBookMark(id)
+                            }
+                            
+                        })
+                    }
+                    
+                    
+                })
+                
+            });
+        })
+    
+    
+
+}
