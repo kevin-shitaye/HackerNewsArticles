@@ -78,26 +78,7 @@ function displayStrories() {
             spinner.style.visibility = "hidden";
             ids.forEach(id => {
 
-                get_item(id).then(data =>{
-
-                    if (data != null) {
-                        let date = moment.unix(data.time).fromNow()
-
-                        let text = ""
-                        if (data.text) {
-                            text = data.text.slice(0, 80)
-                        }
-                        const article = document.createElement('div')
-                        article.innerHTML = ` 
-                        <article class="article">
-                        <a href="${data.url}" target="_blank"><h2>${data.title.slice(8)}</h2></a> 
-                        <div class="bookmark_btn" id="btn${data.id}"><i class="fas fa-bookmark"></i></div>
-                        <p>${text}...</p>
-                        <p><b>By</b>: <i>${data.by} |</i>  
-                        <i class="far fa-star">Score: ${data.score} |</i> 
-                        <i>${date}</i></p>
-                        </article>
-                        `
+                
 
 
 
