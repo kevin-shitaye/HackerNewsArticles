@@ -56,7 +56,7 @@ async function get_item(id) {
     return data
 
 }
-
+// creating a function to display stories
 function displayStrories() {
     spinner.style.visibility = "visible";
 
