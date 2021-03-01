@@ -83,7 +83,10 @@ function displayStrories() {
                     if (data != null) {
                         let date = moment.unix(data.time).fromNow()
 
-                        
+                        let text = ""
+                        if (data.text) {
+                            text = data.text.slice(0, 80)
+                        }
                         const article = document.createElement('div')
                         article.innerHTML = ` 
                         <article class="article">
