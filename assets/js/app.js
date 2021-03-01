@@ -292,3 +292,20 @@ function displayJobs() {
         
 
 }
+
+
+function search() {
+    let keyWord = search_input.value.toLowerCase();
+    let collection_list = document.querySelectorAll('.article')
+    
+
+        collection_list.forEach(element => {
+            let str = element.firstElementChild.firstElementChild.textContent.toLowerCase()
+            if (str.includes(keyWord)) {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        });
+    
+}
