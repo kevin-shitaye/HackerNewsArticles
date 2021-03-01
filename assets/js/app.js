@@ -338,3 +338,22 @@ function sort(e) {
     
     }
 }
+
+
+displayStrories()
+
+
+
+function addToBookMark(id) {
+    let bookmarks = localStorage.getItem("bookmarks")
+    if (bookmarks) {
+        bookmarks_list = JSON.parse(bookmarks)
+        bookmarks_list.push(id)
+        
+    } else {
+        bookmarks_list = [id]
+    }
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks_list))
+    console.log(localStorage.getItem("bookmarks"));
+    
+}
