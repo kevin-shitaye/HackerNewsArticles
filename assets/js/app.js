@@ -142,3 +142,83 @@ function displayStrories() {
     
 
 }
+
+
+function displayAsks() {
+    spinner.style.visibility = "visible";
+
+        // making this nav active
+        all_stories.classList.remove("active")
+        asks.classList.add("active")
+        job_alert.classList.remove("active")
+
+        // displaying the right div
+        articles_posts.style.display = "none"
+        articles_jobs.style.display = "none"
+        articles_asks.style.display = "block"
+
+        articles_posts.innerHTML = ""
+        articles_jobs.innerHTML = ""
+
+        getAsks().then(ids =>{
+            
+            spinner.style.visibility = "hidden";
+            ids.forEach(id => {
+
+                get_item(id).then(data =>{
+
+                    if (data != null) {
+                        let date = moment.unix(data.time).fromNow()
+
+                        let text = ""
+                        if (data.text) {
+                            text = data.text.slice(0, 80)
+                        }
+                        const article = document.createElement('div')
+                        article.innerHTML = ` 
+                        <article class="article">
+                        <a href="../asks.html?id=${data.id}"><h2>${data.title}</h2></a>
+                        <div class="bookmark_btn" id="btn${data.id}"><i class="fas fa-bookmark"></i></div>
+                        <p>${text}...</p>
+                        <p><b>By</b>: <i>${data.by} |</i>  
+                        <i class="far fa-star">Score: ${data.score} |</i> 
+                        <i>${date}</i></p>
+                        </article>
+                        `
+                        // adding date to the article for sorting
+                        article.firstElementChild.dataset.date = data.time
+                        articles_asks.appendChild(article)
+                        articles.appendChild(articles_asks)
+
+                        // marking saved bookmarks
+                        let bookmark_btn = document.querySelector(`#btn${data.id}`)
+                        let saved = localStorage.getItem("bookmarks")
+                        if (saved) {
+                            if (saved.includes(data.id)) {
+                                bookmark_btn.style.color = "purple"
+                            }
+                        }
+
+                        // appending event lisner to the bookmark
+                        
+                        bookmark_btn.addEventListener("click", ()=>{
+                            if (!(bookmark_btn.style.color == "purple")) {
+                                bookmark_btn.style.color = "purple"
+                                addToBookMark(data.id)
+                            } else {
+                                bookmark_btn.style.color = "gray"
+                                removeFromBookMark(id)
+                            }
+                            
+                        })
+                        
+                    }
+                    
+                    
+                })
+                
+            });
+        })
+    
+    
+}
