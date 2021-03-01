@@ -222,3 +222,49 @@ function displayAsks() {
     
     
 }
+
+function displayJobs() {
+    spinner.style.visibility = "visible";
+
+    // making this nav active
+    all_stories.classList.remove("active")
+    asks.classList.remove("active")
+    job_alert.classList.add("active")
+
+    // displaying the right div
+  
+    articles_posts.innerHTML = ""
+    articles_asks.innerHTML = ""
+    
+        getJobs().then(ids =>{
+            spinner.style.visibility = "hidden";
+            ids.forEach(id => {
+
+                get_item(id).then(data =>{
+                    if (data != null) {
+                        let date = moment.unix(data.time).fromNow()
+                        const article = document.createElement('div')
+                        article.innerHTML = ` 
+                        <article class="article">
+                        <a href="${data.url}" target="_blank"><h2>${data.title}</h2></a> 
+                        <div class="bookmark_btn" id="btn${data.id}"><i class="fas fa-bookmark"></i></div>
+                        <p><b>By</b>: <i>${data.by} |</i>  
+                        <i class="far fa-star">Score: ${data.score} |</i> 
+                        <i>${date}</i></p>
+                        </article>
+                        `
+                        
+                            
+                            
+                        })
+                    }
+                    
+                    
+                })
+                
+            });
+            
+        })
+        
+
+}
