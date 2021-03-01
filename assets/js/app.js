@@ -99,3 +99,20 @@ function displayStrories() {
                         </article>
                         `
 
+
+
+
+                         // adding date to the article for sorting
+                         article.firstElementChild.dataset.date = data.time
+                         articles_posts.appendChild(article)
+                         articles.appendChild(articles_posts)
+ 
+                         
+                         // marking saved bookmarks
+                         let bookmark_btn = document.querySelector(`#btn${data.id}`)
+                         let saved = localStorage.getItem("bookmarks")
+                         if (saved) {
+                             if (saved.includes(data.id)) {
+                                 bookmark_btn.style.color = "purple"
+                             }
+                         }
