@@ -327,7 +327,11 @@ function sort(e) {
     }
 
     // clearing the dom so i can append the sorted one
-    
+    parent.innerHTML = ""
+    for (let i = 0; i < list_of_dates.length; i++) {
+        for (let j = 0; j < collection_list.length; j++) {
+            if (collection_list[j].dataset.date == list_of_dates[i]) {
+                parent.appendChild(collection_list[j])
             }
             
         }
