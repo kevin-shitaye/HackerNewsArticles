@@ -232,7 +232,10 @@ function displayJobs() {
     job_alert.classList.add("active")
 
     // displaying the right div
-  
+    articles_posts.style.display = "none"
+    articles_asks.style.display = "none"
+    articles_jobs.style.display = "block"
+
     articles_posts.innerHTML = ""
     articles_asks.innerHTML = ""
     
@@ -253,8 +256,29 @@ function displayJobs() {
                         <i>${date}</i></p>
                         </article>
                         `
+                        article.firstElementChild.dataset.date = data.time
+                        articles_jobs.appendChild(article)
+                        articles.appendChild(articles_jobs)
+
+                        // marking saved bookmarks
+                        let bookmark_btn = document.querySelector(`#btn${data.id}`)
+                        let saved = localStorage.getItem("bookmarks")
+                        if (saved) {
+                            if (saved.includes(data.id)) {
+                                bookmark_btn.style.color = "purple"
+                            }
+                        }
+
+                        // appending event lisner to the bookmark
                         
-                            
+                        bookmark_btn.addEventListener("click", ()=>{
+                            if (!(bookmark_btn.style.color == "purple")) {
+                                bookmark_btn.style.color = "purple"
+                                addToBookMark(data.id)
+                            } else {
+                                bookmark_btn.style.color = "gray"
+                                removeFromBookMark(id)
+                            }
                             
                         })
                     }
