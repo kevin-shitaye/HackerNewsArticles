@@ -129,3 +129,27 @@ function sort(e) {
     
     }
 }
+
+function removeFromBookMark(id) {
+    let bookmarks = localStorage.getItem("bookmarks")
+    if (bookmarks) {
+        bookmarks_list = JSON.parse(bookmarks)
+        const index = bookmarks_list.indexOf(id);
+        if (index > -1) {
+            bookmarks_list.splice(index, 1);
+        }
+
+    } else {
+        return false
+    }
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks_list))
+    console.log(localStorage.getItem("bookmarks"));
+    displayBookmarked()
+}
+
+function removeAll() {
+    localStorage.setItem("bookmarks", "")
+    displayBookmarked()
+}
+
+displayBookmarked()
