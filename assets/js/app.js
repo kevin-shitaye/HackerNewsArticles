@@ -353,7 +353,8 @@ function addToBookMark(id) {
     } else {
         bookmarks_list = [id]
     }
-    
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks_list))
+    console.log(localStorage.getItem("bookmarks"));
     
 }
 
@@ -370,5 +371,6 @@ function removeFromBookMark(id) {
     } else {
         return false
     }
-   
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks_list))
+    console.log(localStorage.getItem("bookmarks"));
 }
