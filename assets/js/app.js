@@ -126,7 +126,7 @@ function displayStrories() {
                                 bookmark_btn.style.color = "purple"
                                 addToBookMark(data.id)
                             } else {
-                                bookmark_btn.style.color = "gray"
+                                bookmark_btn.style.color = "purple"
                                 removeFromBookMark(id)
                             }
                             
