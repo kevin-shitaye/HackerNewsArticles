@@ -294,24 +294,6 @@ function displayJobs() {
 }
 
 
-function search() {
-    let keyWord = search_input.value.toLowerCase();
-    let collection_list = document.querySelectorAll('.article')
-    
-
-        collection_list.forEach(element => {
-            let str = element.firstElementChild.firstElementChild.textContent.toLowerCase()
-            if (str.includes(keyWord)) {
-                element.style.display = "block";
-            } else {
-                element.style.display = "none";
-            }
-        });
-    
-}
-
-
-
 function sort(e) {
     list_of_dates = []
     let collection_list = document.querySelectorAll('.article')
@@ -343,7 +325,28 @@ function sort(e) {
 displayStrories()
 
 
+//Search function
+function search() {
+    let keyWord = search_input.value.toLowerCase();
+    let collection_list = document.querySelectorAll('.article')
+    
 
+        collection_list.forEach(element => {
+            let str = element.firstElementChild.firstElementChild.textContent.toLowerCase()
+            if (str.includes(keyWord)) {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        });
+    
+}
+
+
+
+
+
+//AddToBookmark
 function addToBookMark(id) {
     let bookmarks = localStorage.getItem("bookmarks")
     if (bookmarks) {
@@ -358,7 +361,7 @@ function addToBookMark(id) {
     
 }
 
-
+//RemoveFromBookmark
 function removeFromBookMark(id) {
     let bookmarks = localStorage.getItem("bookmarks")
     if (bookmarks) {
