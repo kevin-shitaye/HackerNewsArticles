@@ -18,3 +18,12 @@ async function get_item(id) {
     return data
 
 }
+
+function display() {
+    get_item(getIdFromURL()).then(data => {
+        let time = moment.unix(data.time).fromNow()
+        main_author.textContent = `By: ${data.by}`
+        main_time.innerHTML = time
+        main_topic.textContent = data.title
+        main_text.innerHTML = data.text
+
