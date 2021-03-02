@@ -101,3 +101,31 @@ function displayBookmarked() {
         });
     
 }
+
+
+function sort(e) {
+    list_of_dates = []
+    let collection_list = document.querySelectorAll('.article')
+    parent = collection_list[0].parentElement
+    collection_list.forEach(article => {
+        list_of_dates.push(article.dataset.date)
+    });
+    
+    list_of_dates.sort()
+
+    if (e.target.id == 'new') {
+        list_of_dates.reverse()
+    }
+
+    // clearing the dom so i can append the sorted one
+    parent.innerHTML = ""
+    for (let i = 0; i < list_of_dates.length; i++) {
+        for (let j = 0; j < collection_list.length; j++) {
+            if (collection_list[j].dataset.date == list_of_dates[i]) {
+                parent.appendChild(collection_list[j])
+            }
+            
+        }
+    
+    }
+}
