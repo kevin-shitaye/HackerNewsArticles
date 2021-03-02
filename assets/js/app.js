@@ -71,7 +71,7 @@ function displayStrories() {
         articles_posts.style.display = "block"
 
 
-
+        //articles_asks
         articles_asks.innerHTML = ""
         articles_jobs.innerHTML = ""
         getStories().then(ids =>{
