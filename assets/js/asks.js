@@ -27,3 +27,22 @@ function display() {
         main_topic.textContent = data.title
         main_text.innerHTML = data.text
 
+        data.kids.forEach(id => {
+            get_item(id).then(comment =>{
+                let time = moment.unix(comment.time).fromNow()
+                let card = document.createElement("div")
+                card.classList.add("card")
+                card.innerHTML = `<div class="card-body">
+                <h5 class="card-title">By: <i>${comment.by}</i> </h5>
+                <h6 class="card-subtitle mb-2 text-muted">${time}</h6>
+                <p class="card-text">${comment.text}</p>
+              </div>`
+
+              comments_section.appendChild(card)
+            })
+        });
+
+    })
+}
+
+display()
