@@ -61,3 +61,27 @@ function displayBookmarked() {
                     article.firstElementChild.dataset.date = data.time
                     articles_div.appendChild(article)
                     articles.appendChild(articles_div)
+
+                      // marking saved bookmarks
+                      let bookmark_btn = document.querySelector(`#btn${data.id}`)
+                      bookmark_btn.style.color = "purple"
+  
+                      // appending event lisner to the bookmark
+                      
+                      bookmark_btn.addEventListener("click", ()=>{
+                              removeFromBookMark(data.id)
+                      })
+                  }
+                  
+                  
+              })
+          });
+  
+          
+      } else {
+          spinner.style.visibility = "hidden";
+          articles_div.innerHTML = "<h2>Bookmark is Empty!</h2>"
+          articles.appendChild(articles_div)
+      }
+      
+  }
